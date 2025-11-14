@@ -4,6 +4,8 @@ First published: November 13, 2025
 Version: 1.1.3 (on November 14, 2025)
 
 ---
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 ### Authored by pseudosig
 # Introduction
 

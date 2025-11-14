@@ -1,7 +1,5 @@
 theme: jekyll-theme-minimal
 title: White Papers
-description: Mathematical and physical research paperstheme: jekyll-theme-minimal
-title: White Papers
 description: Mathematical and physical research papers
 markdown: kramdown
 kramdown:

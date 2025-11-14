@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="pseudosig" />
+  <title>Coherence, Effect Logic, and the Structural Nature of Physical Systems</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    div.abstract {
+      margin: 2em 2em 2em 2em;
+      text-align: left;
+      font-size: 85%;
+    }
+    div.abstract-title {
+      font-weight: bold;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 0.5em;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<div style='text-align: center; margin: 2em 0;'>
+<p><strong>First published:</strong> November 13, 2025</p>
+<p><strong>Version:</strong> 1.1.3 (November 14, 2025)</p>
+<p><strong>Author:</strong> pseudosig</p>
+</div>
+<hr>
+<header id="title-block-header">
+<h1 class="title">Coherence, Effect Logic, and the Structural Nature of
+Physical Systems</h1>
+<p class="author">pseudosig</p>
+<div class="abstract">
+<div class="abstract-title">Abstract</div>
+<p>We present a rigorous model-theoretic framework demonstrating that
+any physical system satisfying a set of operational coherence
+constraints canonically determines a mathematical structure sufficient
+for standard classical and quantum theories. We proceed in three steps:
+(1) We define a minimal first-order theory <span
+class="math inline">\(T_{\min}\)</span> of experimental runs and
+outcomes, and prove that any model <span class="math inline">\(M \models
+T_{\min}\)</span> generates a canonical effect algebra <span
+class="math inline">\(\mathbf{E}(M)\)</span> via a free completion
+modulo empirical congruence. (2) We introduce a stronger theory <span
+class="math inline">\(T_{\mathrm{rich}}\)</span> containing operational
+analogues of the Riesz decomposition and Archimedean properties, and
+prove that for any <span class="math inline">\(M \models
+T_{\mathrm{rich}}\)</span>, <span
+class="math inline">\(\mathbf{E}(M)\)</span> admits a representation as
+an order-unit space. (3) We conclude that the essential mathematical
+structures of physics (ordered real vector spaces, states,
+probabilities) are not imposed on the world but are structurally
+inevitable consequences of empirical coherence.</p>
+</div>
+</header>
+<h1 id="introduction">Introduction</h1>
+<p>The applicability of mathematics to the physical world is often
+framed as a mystery or a fortunate accident. This paper argues for a
+structuralist resolution: that the “unreasonable effectiveness” of
+mathematics is, to a large extent, a logical consequence of the
+consistency of physical events.</p>
+<p>Our thesis is that any system described by a non-mathematical object
+language of qualitative events—provided it satisfies basic conditions of
+coherence—admits a canonical representation as a mathematical structure.
+We formalize this by constructing a rigorous bridge between</p>
+<ul>
+<li><p>a qualitative first-order theory of experimental outcomes,
+and</p></li>
+<li><p>the ordered real structures used in classical and quantum
+mechanics.</p></li>
+</ul>
+<p>Crucially, we avoid circularity by distinguishing three layers:</p>
+<ol>
+<li><p><strong>Minimal Coherence (<span
+class="math inline">\(T_{\min}\)</span>):</strong> A weak theory
+expressing only finite consistency of occurrences and exclusivities.
+From any <span class="math inline">\(M \models T_{\min}\)</span> we
+construct a canonical effect algebra <span
+class="math inline">\(\mathbf{E}(M)\)</span> by a free completion,
+without assuming algebraic closure at the operational level.</p></li>
+<li><p><strong>Rich Coherence (<span
+class="math inline">\(T_{\mathrm{rich}}\)</span>):</strong> A stronger
+theory adding operational closure principles. We show that <span
+class="math inline">\(M \models T_{\mathrm{rich}}\)</span> implies that
+<span class="math inline">\(\mathbf{E}(M)\)</span> is an Archimedean
+effect algebra with the Riesz decomposition property.</p></li>
+<li><p><strong>Structural Core (<span
+class="math inline">\(\mathcal{S}\)</span>):</strong> Using standard
+representation theorems, we derive from <span
+class="math inline">\(\mathbf{E}(M)\)</span> an order-unit space
+supporting ordered real vector spaces, states, and
+probabilities.</p></li>
+</ol>
+<p>The upshot is that, for empirically coherent systems, the mathematics
+of physical theory emerges as the canonical structural completion of
+purely qualitative data.</p>
+<h2 class="unnumbered" id="related-work">Related Work</h2>
+<p>Our approach is technically closest to the traditions of operational
+quantum logic and effect algebras. Foulis and Bennett introduced effect
+algebras as abstract models of unsharp events in quantum measurements,
+and proved representation results relating them to ordered abelian
+groups and convex structures. Generalized probabilistic theories and
+related frameworks axiomatize states, measurements, and transformations
+at an abstract level and derive convex state spaces and effect
+spaces.</p>
+<p>On the philosophical side, the work resonates with both Hartry
+Field’s nominalist program and ontic structural realism. Field showed
+that portions of classical physics can be reformulated without
+quantification over numbers, treating mathematics as a conservative
+representational aid. Structural realists argue that what our best
+physical theories get right is the structure they describe, rather than
+a particular underlying “substance.” This paper contributes a concrete
+technical instantiation of that viewpoint, using the machinery of effect
+algebras and order-unit spaces to link empirical coherence to
+mathematical structure.</p>
+<h1 id="the-minimal-operational-framework">The Minimal Operational
+Framework</h1>
+<p>We begin with a language that assumes no mathematical objects—no
+sets, functions, or numbers—only concrete experimental entities.</p>
+<h2 id="the-language-mathcall_min">The Language <span
+class="math inline">\(\mathcal{L}_{\min}\)</span></h2>
+<p>Let <span class="math inline">\(\mathcal{L}_{\min}\)</span> be a
+many-sorted first-order language with sorts:</p>
+<ul>
+<li><p><span class="math inline">\(\mathsf{Sys}\)</span>: Physical
+systems.</p></li>
+<li><p><span class="math inline">\(\mathsf{Run}\)</span>: Individual
+experimental realizations.</p></li>
+<li><p><span class="math inline">\(\mathsf{Out}\)</span>: Concrete
+outcome tokens.</p></li>
+</ul>
+<p>The primitive predicates are:</p>
+<ul>
+<li><p><span class="math inline">\(\mathrm{Occurs}(o,r) \subseteq
+\mathsf{Out} \times \mathsf{Run}\)</span>: outcome <span
+class="math inline">\(o\)</span> occurs in run <span
+class="math inline">\(r\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathrm{SameKind}(o_1,o_2) \subseteq
+\mathsf{Out}^2\)</span>: <span class="math inline">\(o_1\)</span> and
+<span class="math inline">\(o_2\)</span> are tokens of the same
+empirical kind (an equivalence relation).</p></li>
+<li><p><span class="math inline">\(\mathrm{Exclusive}(o_1,o_2,r)
+\subseteq \mathsf{Out}^2 \times \mathsf{Run}\)</span>: in run <span
+class="math inline">\(r\)</span>, <span
+class="math inline">\(o_1\)</span> and <span
+class="math inline">\(o_2\)</span> are presented as mutually exclusive
+alternatives.</p></li>
+</ul>
+<p>An <span class="math inline">\(\mathcal{L}_{\min}\)</span>-structure
+<span class="math inline">\(M\)</span> consists of underlying sets <span
+class="math inline">\(\mathsf{Sys}^M\)</span>, <span
+class="math inline">\(\mathsf{Run}^M\)</span>, <span
+class="math inline">\(\mathsf{Out}^M\)</span> and interpretations of
+these predicates.</p>
+<h2 id="minimal-coherence-theory-t_min">Minimal Coherence Theory <span
+class="math inline">\(T_{\min}\)</span></h2>
+<p>We define <span class="math inline">\(T_{\min}\)</span> as the set of
+axioms enforcing finite logical consistency of outcomes.</p>
+<ol>
+<li><p><strong>Kind Structure:</strong> <span
+class="math inline">\(\mathrm{SameKind}\)</span> is an equivalence
+relation. We denote the set of equivalence classes (outcome-kinds) in a
+model <span class="math inline">\(M\)</span> by <span
+class="math display">\[K(M) := \mathsf{Out}^M /
+\mathrm{SameKind}.\]</span></p></li>
+<li><p><strong>Exclusivity Respected by Occurrence:</strong> Mutually
+exclusive alternatives cannot co-occur in a run: <span
+class="math display">\[\forall r,o_1,o_2 \,\bigl(
+\mathrm{Exclusive}(o_1,o_2,r) \rightarrow
+\neg(\mathrm{Occurs}(o_1,r)\wedge\mathrm{Occurs}(o_2,r))
+\bigr).\]</span></p></li>
+<li><p><strong>Non-Triviality of Runs:</strong> <span
+class="math display">\[\forall r\,\exists
+o\,\mathrm{Occurs}(o,r).\]</span></p></li>
+<li><p><strong>Finite Pattern Soundness:</strong> For every finite tuple
+of outcome tokens <span class="math inline">\((o_1,\dots,o_n)\)</span>
+and every assignment <span
+class="math inline">\(\sigma\in\{0,1\}^n\)</span> such that <span
+class="math display">\[\sigma(i)=\sigma(j)=1 \text{ and }
+\mathrm{Exclusive}(o_i,o_j,r)\]</span> would hold for some run <span
+class="math inline">\(r\)</span>, we add an axiom forbidding that
+pattern: <span class="math display">\[\forall
+r\,\neg\Bigl(\bigwedge_{i:\,\sigma(i)=1}\mathrm{Occurs}(o_i,r)\;\wedge\;\bigwedge_{j:\,\sigma(j)=0}\neg\mathrm{Occurs}(o_j,r)\Bigr).\]</span>
+Intuitively, any finite pattern of occurrences that would contradict the
+given exclusivity relations is declared impossible.</p></li>
+</ol>
+<div class="definition_env">
+<p><strong>Definition 1</strong>. <em>A <em>minimally coherent
+system</em> is a model <span class="math inline">\(M\models
+T_{\min}\)</span>.</em></p>
+</div>
+<p>Note that <span class="math inline">\(M\)</span> contains no
+algebraic structure: no sums, no complements, no probabilities. It is a
+bare catalogue of consistent events.</p>
+<h1 id="the-canonical-effect-algebra">The Canonical Effect Algebra</h1>
+<p>We now construct the algebraic skeleton of <span
+class="math inline">\(M\)</span>. We employ a free universal
+construction to ensure we do not “smuggle” algebraic properties into the
+system but rather extract only what is empirically present.</p>
+<h2 id="the-term-algebra">The Term Algebra</h2>
+<p>Let <span class="math inline">\(K(M)\)</span> be the set of
+outcome-kinds in <span class="math inline">\(M\)</span>. For each <span
+class="math inline">\(k \in K(M)\)</span> introduce a generator symbol
+<span class="math inline">\(g_k\)</span>.</p>
+<p>We form the free term algebra <span
+class="math inline">\(\mathcal{T}(K(M))\)</span> over these generators
+in the signature of effect algebras <span
+class="math inline">\((0,1,\oplus,(\cdot)^\perp)\)</span>. Elements of
+<span class="math inline">\(\mathcal{T}(K(M))\)</span> are formal
+expressions built from the <span class="math inline">\(g_k\)</span>, the
+constants <span class="math inline">\(0,1\)</span>, the partial binary
+symbol <span class="math inline">\(\oplus\)</span>, and the unary symbol
+<span class="math inline">\(^\perp\)</span>, modulo the equational
+effect-algebra axioms (EA1)–(EA4).</p>
+<h2 id="empirical-congruence">Empirical Congruence</h2>
+<p>We now identify terms that are forced to agree by the empirical
+behavior of <span class="math inline">\(M\)</span>.</p>
+<div class="definition_env">
+<p><strong>Definition 2</strong> (Forced Relations). <em>For a minimally
+coherent system <span class="math inline">\(M\)</span>, let <span
+class="math inline">\(\Phi_M\)</span> be the following set of pairs of
+terms in <span
+class="math inline">\(\mathcal{T}(K(M))\)</span>:</em></p>
+<ol>
+<li><p><em><strong>Forced Zero:</strong> If <span
+class="math inline">\(k \in K(M)\)</span> is such that no token of kind
+<span class="math inline">\(k\)</span> ever occurs in any run of <span
+class="math inline">\(M\)</span>, then <span
+class="math display">\[(g_k, 0) \in \Phi_M.\]</span></em></p></li>
+<li><p><em><strong>Forced Orthogonality (Defined Sum):</strong> If
+outcome-kinds <span class="math inline">\(k_1,k_2\)</span> are always
+presented as mutually exclusive alternatives whenever they appear
+together in a run, we allow <span class="math inline">\(g_{k_1} \oplus
+g_{k_2}\)</span> as a term of <span
+class="math inline">\(\mathcal{T}(K(M))\)</span>. This encodes the fact
+that their disjoint sum is well-defined.</em></p></li>
+<li><p><em><strong>Forced Sum / Coarse-Graining:</strong> If there
+exists an outcome-kind <span class="math inline">\(k_3\)</span> such
+that in every run where <span class="math inline">\(k_1,k_2,k_3\)</span>
+appear as alternatives, a token of kind <span
+class="math inline">\(k_3\)</span> occurs if and only if a token of kind
+<span class="math inline">\(k_1\)</span> or <span
+class="math inline">\(k_2\)</span> occurs, then we include <span
+class="math display">\[(g_{k_1} \oplus g_{k_2}, g_{k_3}) \in
+\Phi_M.\]</span></em></p></li>
+<li><p><em><strong>Forced Unit:</strong> If there is an outcome-kind
+<span class="math inline">\(k\)</span> such that in every run of <span
+class="math inline">\(M\)</span> some token of kind <span
+class="math inline">\(k\)</span> occurs, then <span
+class="math display">\[(g_k,1) \in \Phi_M.\]</span></em></p></li>
+</ol>
+<p><em>Let <span class="math inline">\(\approx_M\)</span> be the
+smallest congruence on <span
+class="math inline">\(\mathcal{T}(K(M))\)</span> (with respect to the
+effect-algebra operations) that contains all pairs in <span
+class="math inline">\(\Phi_M\)</span>.</em></p>
+</div>
+<div class="definition_env">
+<p><strong>Definition 3</strong>. <em>The <em>canonical effect
+algebra</em> of <span class="math inline">\(M\)</span> is the quotient
+<span class="math display">\[\mathbf{E}(M) := \mathcal{T}(K(M)) /
+\approx_M.\]</span></em></p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 4</strong> (Coherence <span
+class="math inline">\(\Rightarrow\)</span> Effect Algebra). <em>For any
+minimally coherent system <span class="math inline">\(M \models
+T_{\min}\)</span>, the structure <span
+class="math inline">\(\mathbf{E}(M)\)</span> is a well-defined effect
+algebra. Moreover, <span class="math inline">\(\mathbf{E}(M)\)</span>
+satisfies the universal property: for any effect algebra <span
+class="math inline">\(F\)</span> and any map <span
+class="math inline">\(f:K(M)\to F\)</span> that respects the empirical
+facts of <span class="math inline">\(M\)</span>, there exists a unique
+effect-algebra homomorphism <span class="math inline">\(\tilde
+f:\mathbf{E}(M)\to F\)</span> with <span class="math inline">\(\tilde
+f([g_k]) = f(k)\)</span> for all <span class="math inline">\(k \in
+K(M)\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> By construction, the term algebra <span
+class="math inline">\(\mathcal{T}(K(M))\)</span> satisfies the
+effect-algebra axioms syntactically. The relation <span
+class="math inline">\(\approx_M\)</span> is a congruence by definition:
+it is the smallest equivalence relation containing <span
+class="math inline">\(\Phi_M\)</span> and closed under the operations
+<span class="math inline">\(0,1,\oplus,(\cdot)^\perp\)</span>.
+Quotienting by a congruence preserves equational axioms and the
+quasi-equations encoding partiality, so <span
+class="math inline">\(\mathbf{E}(M)\)</span> inherits an effect-algebra
+structure.</p>
+<p>The universal property is the usual one for a free algebra modulo a
+congruence: any map from generators into an effect algebra that
+satisfies the identifying equations in <span
+class="math inline">\(\Phi_M\)</span> extends uniquely to a homomorphism
+from the quotient. ◻</p>
+</div>
+<p>This theorem establishes the first bridge: mere finite consistency
+(<span class="math inline">\(T_{\min}\)</span>) is sufficient to
+generate a canonical event logic <span
+class="math inline">\(\mathbf{E}(M)\)</span>.</p>
+<h1 id="from-coherence-to-rich-structure">From Coherence to Rich
+Structure</h1>
+<p>While <span class="math inline">\(\mathbf{E}(M)\)</span> is an effect
+algebra, it may be weak (e.g., lacking limits or sufficient
+refinements). To recover the mathematics of physical theories, we
+require specific structural properties: the <em>Riesz Decomposition
+Property (RDP)</em> and <em>Archimedeaness</em>. Instead of assuming
+these algebraically, we introduce a stronger operational theory <span
+class="math inline">\(T_{\mathrm{rich}}\)</span> that forces them.</p>
+<h2 id="the-theory-t_mathrmrich">The Theory <span
+class="math inline">\(T_{\mathrm{rich}}\)</span></h2>
+<p>We now strengthen <span class="math inline">\(T_{\min}\)</span> to a
+theory <span class="math inline">\(T_{\mathrm{rich}}\)</span> that
+captures operational analogues of the Riesz decomposition property and
+Archimedeaness.</p>
+<div class="axiom_env">
+<p><strong>Axiom 1</strong> (Operational Refinement (Riesz-Type)).
+<em>For any outcome-kinds <span class="math inline">\(A,B,X,Y,C \in
+K(M)\)</span>, suppose:</em></p>
+<ol>
+<li><p><em>In every run <span class="math inline">\(r\)</span> where
+tokens of kinds <span class="math inline">\(A,B,C\)</span> are presented
+as alternatives, a token of kind <span class="math inline">\(C\)</span>
+occurs in <span class="math inline">\(r\)</span> if and only if a token
+of kind <span class="math inline">\(A\)</span> or a token of kind <span
+class="math inline">\(B\)</span> occurs in <span
+class="math inline">\(r\)</span>.</em></p></li>
+<li><p><em>In every run <span class="math inline">\(r&#39;\)</span>
+where tokens of kinds <span class="math inline">\(X,Y,C\)</span> are
+presented as alternatives, a token of kind <span
+class="math inline">\(C\)</span> occurs in <span
+class="math inline">\(r&#39;\)</span> if and only if a token of kind
+<span class="math inline">\(X\)</span> or a token of kind <span
+class="math inline">\(Y\)</span> occurs in <span
+class="math inline">\(r&#39;\)</span>.</em></p></li>
+</ol>
+<p><em>Then there exist outcome-kinds <span
+class="math inline">\(Z_{AX}, Z_{AY}, Z_{BX}, Z_{BY}\)</span> such
+that:</em></p>
+<ul>
+<li><p><em>Whenever <span class="math inline">\(A\)</span> and <span
+class="math inline">\(X\)</span> appear as alternatives, <span
+class="math inline">\(Z_{AX}\)</span> occurs iff tokens of kinds <span
+class="math inline">\(A\)</span> and <span
+class="math inline">\(X\)</span> occur together, and similarly for the
+other pairs.</em></p></li>
+<li><p><em>Whenever <span class="math inline">\(A\)</span> appears as an
+alternative, its occurrence is empirically equivalent (at the level of
+runs) to the disjunction “<span class="math inline">\(Z_{AX}\)</span> or
+<span class="math inline">\(Z_{AY}\)</span>”, and similarly for <span
+class="math inline">\(B,X,Y\)</span>.</em></p></li>
+</ul>
+<p><em>Intuitively: any two ways of coarse-graining the same measurement
+context admit a common refinement into joint alternatives.</em></p>
+</div>
+<div class="axiom_env">
+<p><strong>Axiom 2</strong> (Finite Exhaustion (Archimedean-Type)).
+<em>There is no outcome-kind <span class="math inline">\(k \in
+K(M)\)</span> such that, for every integer <span class="math inline">\(N
+\ge 1\)</span>, there exists a single run <span
+class="math inline">\(r\)</span> and <span
+class="math inline">\(N\)</span> distinct tokens <span
+class="math inline">\(o_1,\dots,o_N\)</span> of kind <span
+class="math inline">\(k\)</span> with <span
+class="math display">\[\bigwedge_{i\neq j}
+\mathrm{Exclusive}(o_i,o_j,r).\]</span> In other words, one cannot pack
+arbitrarily many mutually exclusive copies of the same outcome-kind into
+a single run.</em></p>
+</div>
+<div class="definition_env">
+<p><strong>Definition 5</strong>. <em>A <em>richly coherent system</em>
+is a model <span class="math inline">\(M \models
+T_{\mathrm{rich}}\)</span>.</em></p>
+</div>
+<h2 id="the-algebra-of-rich-systems">The Algebra of Rich Systems</h2>
+<div class="theorem">
+<p><strong>Theorem 6</strong> (<span
+class="math inline">\(T_{\mathrm{rich}}\)</span> Implies Rich Algebra).
+<em>Let <span class="math inline">\(M \models
+T_{\mathrm{rich}}\)</span>. Then the canonical effect algebra <span
+class="math inline">\(\mathbf{E}(M)\)</span> satisfies:</em></p>
+<ol>
+<li><p><em>the Riesz Decomposition Property (RDP), and</em></p></li>
+<li><p><em>the Archimedean Property.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Sketch.</em> The Operational Refinement axiom ensures that
+whenever a coarse-grained measurement outcome-kind <span
+class="math inline">\(C\)</span> can be empirically decomposed as “<span
+class="math inline">\(A\)</span> or <span
+class="math inline">\(B\)</span>” and also as “<span
+class="math inline">\(X\)</span> or <span
+class="math inline">\(Y\)</span>”, there exist joint refinements <span
+class="math inline">\(Z_{ij}\)</span> that realize the overlaps between
+these decompositions. Translated into the effect algebra, this is
+precisely the condition that whenever <span class="math inline">\(c = a
+\oplus b = x \oplus y\)</span> there exist <span
+class="math inline">\(z_{ij}\)</span> refining <span
+class="math inline">\(a,b,x,y\)</span> such that <span
+class="math inline">\(a = z_{AX} \oplus z_{AY}\)</span>, <span
+class="math inline">\(b = z_{BX} \oplus z_{BY}\)</span>, <span
+class="math inline">\(x = z_{AX} \oplus z_{BX}\)</span>, <span
+class="math inline">\(y = z_{AY} \oplus z_{BY}\)</span>. This is the
+Riesz Decomposition Property.</p>
+<p>The Finite Exhaustion axiom directly rules out infinitesimal effects:
+if an element <span class="math inline">\(e\in \mathbf{E}(M)\)</span>
+could be added to itself arbitrarily many times without exceeding the
+unit, this would correspond to being able to realize arbitrarily many
+mutually exclusive tokens of the same kind within a single run,
+contradicting the axiom. This is exactly the Archimedean
+condition. ◻</p>
+</div>
+<p>Thus, richly coherent systems give rise to effect algebras with the
+structural properties required for the standard representation
+theorems.</p>
+<h1 id="the-emergence-of-essential-mathematics">The Emergence of
+Essential Mathematics</h1>
+<p>We now cross the final bridge using standard representation theorems
+from the literature on effect algebras and ordered abelian groups.</p>
+<h2 id="representation-as-an-ordered-group-interval">Representation as
+an Ordered Group Interval</h2>
+<div class="theorem">
+<p><strong>Theorem 7</strong> (Representation of Rich Algebras). <em>Let
+<span class="math inline">\(\mathbf{E}\)</span> be an effect algebra
+satisfying the Riesz Decomposition Property and the Archimedean
+Property. Then there exists a partially ordered abelian group <span
+class="math inline">\((G,+,\leq)\)</span> with an order unit <span
+class="math inline">\(u \in G\)</span> such that <span
+class="math display">\[\mathbf{E}\cong [0,u]_G := \{ g \in G \mid 0 \le
+g \le u \}\]</span> as effect algebras, where <span
+class="math inline">\(\oplus\)</span> corresponds to group addition
+restricted to <span class="math inline">\([0,u]_G\)</span>.</em></p>
+</div>
+<p>From this group <span class="math inline">\(G\)</span>, we
+canonically construct the real vector space <span
+class="math inline">\(V = G \otimes_{\mathbb{Z}} \mathbb{R}\)</span> and
+extend the order to <span class="math inline">\(V\)</span>, making <span
+class="math inline">\((V,\le,u)\)</span> an order-unit space.</p>
+<div class="corollary">
+<p><strong>Corollary 8</strong> (Structural Core). <em>For any richly
+coherent system <span class="math inline">\(M \models
+T_{\mathrm{rich}}\)</span>, there exists a canonical mathematical
+structure <span class="math display">\[\mathcal{S}(M) = (V(M), V(M)^+,
+u)\]</span> where <span class="math inline">\(V(M)\)</span> is an
+ordered real vector space, <span class="math inline">\(V(M)^+\)</span>
+is its positive cone, and <span class="math inline">\(u\)</span> is an
+order unit. This structure supports:</em></p>
+<ul>
+<li><p><em><strong>States / Probability:</strong> States are positive
+linear functionals <span class="math inline">\(\omega: V(M) \to
+\mathbb{R}\)</span> with <span
+class="math inline">\(\omega(u)=1\)</span>.</em></p></li>
+<li><p><em><strong>Observables:</strong> Elements of <span
+class="math inline">\(V(M)\)</span>.</em></p></li>
+<li><p><em><strong>Norms:</strong> The order-unit norm <span
+class="math inline">\(\|v\|_u = \inf \{ \lambda &gt; 0 \mid -\lambda u
+\le v \le \lambda u \}\)</span>.</em></p></li>
+</ul>
+</div>
+<p>In many concrete cases (e.g. when <span
+class="math inline">\(\mathbf{E}(M)\)</span> arises from positive
+operators on a Hilbert space) this representation recovers the familiar
+functional-analytic structures of quantum theory. For our purposes, it
+suffices that <span class="math inline">\(\mathcal{S}(M)\)</span>
+supports the fragment <span
+class="math inline">\(\ensuremath{\mathsf{Math}_{\mathrm{phys}}}\)</span>
+of mathematics required for classical and quantum physics: real numbers,
+linear spaces, ordered structure, and probabilities.</p>
+<h1 id="philosophical-synthesis">Philosophical Synthesis</h1>
+<p>We have established a chain of implications: <span
+class="math display">\[M \models T_{\mathrm{rich}}
+    \quad\xrightarrow{\;\text{free completion}\;}\quad
+    \mathbf{E}(M)
+    \quad\xrightarrow{\;\text{representation}\;}\quad
+    \mathcal{S}(M).\]</span></p>
+<p>Here <span class="math inline">\(\mathbf{E}(M)\)</span> is the
+canonical effect algebra extracted from the qualitative data of <span
+class="math inline">\(M\)</span>, and <span
+class="math inline">\(\mathcal{S}(M) = (V(M), V(M)^+, u)\)</span> is the
+associated order-unit space constructed from <span
+class="math inline">\(\mathbf{E}(M)\)</span> by the standard
+representation theorems. The structure <span
+class="math inline">\(\mathcal{S}(M)\)</span> contains the “essential
+mathematics” of physical theory—real numbers, linearity, probability,
+and order—derived purely from the operational consistency of <span
+class="math inline">\(M\)</span>.</p>
+<p>We now make precise what it means, in this setting, to say that a
+system is “mathematical in its structure” rather than merely
+<em>describable</em> by mathematics.</p>
+<div class="definition_env">
+<p><strong>Definition 9</strong> (Structural Mathematicality). <em>Let
+<span class="math inline">\(M\)</span> be a physical system described in
+the operational language <span
+class="math inline">\(\mathcal{L}_{\min}\)</span>, and let <span
+class="math inline">\(\mathbf{E}(M)\)</span> be its canonical effect
+algebra. We say that <span class="math inline">\(M\)</span> is
+<em>structurally mathematical</em> (for <span
+class="math inline">\(\ensuremath{\mathsf{Math}_{\mathrm{phys}}}\)</span>)
+if there exist:</em></p>
+<ul>
+<li><p><em>an ordered real vector space with order unit <span
+class="math inline">\((V, V^+, u)\)</span>, and</em></p></li>
+<li><p><em>an effect-algebra isomorphism <span
+class="math display">\[\iota : \mathbf{E}(M) \;\xrightarrow{\ \cong\ }\;
+[0,u]_V := \{ v \in V \mid 0 \le v \le u \},\]</span></em></p></li>
+</ul>
+<p><em>such that <span class="math inline">\((V, V^+, u)\)</span>
+supports the fragment <span
+class="math inline">\(\ensuremath{\mathsf{Math}_{\mathrm{phys}}}\)</span>
+of mathematics required for classical and quantum physics (ordered real
+numbers, linear structure, states, and probabilities).</em></p>
+<p><em>The representation is called <em>canonical</em> if any two such
+triples <span class="math inline">\((V, V^+, u, \iota)\)</span> and
+<span class="math inline">\((V&#39;, V&#39;^+, u&#39;,
+\iota&#39;)\)</span> are related by a unique order-unit isomorphism
+<span class="math inline">\(T : V \to V&#39;\)</span> with <span
+class="math inline">\(T(u) = u&#39;\)</span> and <span
+class="math inline">\(T \circ \iota = \iota&#39;\)</span>.</em></p>
+</div>
+<p>In other words, a system is structurally mathematical when its
+empirically accessible effect structure is not merely modeled by
+<em>some</em> piece of mathematics, but <em>forces</em>—up to order-unit
+isomorphism—a specific order-unit space realizing the <span
+class="math inline">\(\ensuremath{\mathsf{Math}_{\mathrm{phys}}}\)</span>
+fragment.</p>
+<p>The results of the previous sections now immediately yield:</p>
+<div class="theorem">
+<p><strong>Theorem 10</strong> (Rich Coherence Implies Structural
+Mathematicality). <em>Let <span class="math inline">\(M\)</span> be a
+richly coherent system, i.e. a model <span class="math inline">\(M
+\models T_{\mathrm{rich}}\)</span>. Then <span
+class="math inline">\(M\)</span> is structurally mathematical in the
+sense of the preceding definition. More concretely, there exists a
+canonical order-unit space <span class="math display">\[\mathcal{S}(M) =
+(V(M), V(M)^+, u)\]</span> and an effect-algebra isomorphism <span
+class="math display">\[\iota : \mathbf{E}(M) \;\xrightarrow{\ \cong\ }\;
+[0,u]_{V(M)} := \{ v \in V(M) \mid 0 \le v \le u \},\]</span> unique up
+to order-unit isomorphism.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof sketch.</em> By construction, any <span
+class="math inline">\(M \models T_{\mathrm{rich}}\)</span> gives rise to
+an effect algebra <span class="math inline">\(\mathbf{E}(M)\)</span>
+that satisfies the Riesz Decomposition Property and the Archimedean
+Property. The standard representation theorem for such effect algebras
+yields a partially ordered abelian group <span
+class="math inline">\((G,+,\leq)\)</span> with order unit <span
+class="math inline">\(u\)</span> such that <span
+class="math inline">\(\mathbf{E}(M) \cong [0,u]_G\)</span> as effect
+algebras.</p>
+<p>Passing to the real vector-space completion <span
+class="math inline">\(V = G \otimes_{\mathbb{Z}} \mathbb{R}\)</span> and
+extending the order, we obtain an order-unit space <span
+class="math inline">\((V, V^+, u)\)</span> whose interval <span
+class="math inline">\([0,u]_V\)</span> is naturally identified with
+<span class="math inline">\([0,u]_G\)</span> and hence with <span
+class="math inline">\(\mathbf{E}(M)\)</span>. Setting <span
+class="math inline">\(\mathcal{S}(M) = (V(M), V(M)^+, u)\)</span> and
+taking <span class="math inline">\(\iota\)</span> to be the composite of
+these identifications gives the desired representation. Uniqueness up to
+order-unit isomorphism follows from the uniqueness part of the
+representation theorem. ◻</p>
+</div>
+<p><strong>Conclusion.</strong> Since every richly coherent system <span
+class="math inline">\(M \models T_{\mathrm{rich}}\)</span> gives rise to
+such a canonical order-unit representation <span
+class="math inline">\(\mathcal{S}(M)\)</span>, rich empirical coherence
+entails structural mathematicality in the following sense:</p>
+<ul>
+<li><p>All empirically accessible distinctions about <span
+class="math inline">\(M\)</span> that can be expressed in the
+operational language <span
+class="math inline">\(\mathcal{L}_{\min}\)</span> are encoded in <span
+class="math inline">\(\mathbf{E}(M)\)</span>, and hence in the interval
+<span class="math inline">\([0,u]_{V(M)} \subseteq
+\mathcal{S}(M)\)</span>.</p></li>
+<li><p>The mathematics of standard physical theories (<span
+class="math inline">\(\ensuremath{\mathsf{Math}_{\mathrm{phys}}}\)</span>)
+is available <em>internally</em> to <span
+class="math inline">\(\mathcal{S}(M)\)</span>, without being postulated
+at the outset: real numbers, linear combinations, ordered structure, and
+probabilistic states arise as the structural completion of qualitative
+empirical data.</p></li>
+</ul>
+<p>On this view, mathematics is not an external imposition on the world
+but the rigid skeleton of coherent behavior. Different metaphysical
+interpretations of that skeleton are possible (nominalist, structural
+realist, Platonist), but the core structural claim is invariant:
+whenever a system satisfies the rich coherence constraints encoded in
+<span class="math inline">\(T_{\mathrm{rich}}\)</span>, it thereby
+instantiates a canonical piece of mathematical structure of the sort
+used in classical and quantum physics.</p>
+<div class="thebibliography">
+<p><span>9</span> Foulis, D. J., &amp; Bennett, M. K. (1994). Effect
+algebras and unsharp quantum logics. <em>Foundations of Physics</em>,
+24(10), 1331–1352.</p>
+<p>Worrall, J. (1989). Structural realism: The best of both worlds?
+<em>Dialectica</em>, 43(1-2), 99–124.</p>
+<p>Wigner, E. P. (1960). The unreasonable effectiveness of mathematics
+in the natural sciences. <em>Communications on Pure and Applied
+Mathematics</em>, 13(1), 1–14.</p>
+<p>Gudder, S. (1998). An overview of effect algebras. <em>International
+Journal of Theoretical Physics</em>, 37(1), 915–919.</p>
+<p>Field, H. (1980). <em>Science without numbers: A defence of
+nominalism</em>. Princeton University Press.</p>
+</div>
+</body>
+</html>

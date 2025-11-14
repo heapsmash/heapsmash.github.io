@@ -1,18 +1,3 @@
----
-title: "Coherence, Effect Logic, and the Structural Nature of Physical Systems"
-author: pseudosig
----
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
----
-
-First published: November 13, 2025
-Version: 1.1.3 (on November 14, 2025)
-
----
-### Authored by pseudosig
 # Introduction
 
 The applicability of mathematics to the physical world is often framed as a mystery or a fortunate accident. This paper argues for a structuralist resolution: that the "unreasonable effectiveness" of mathematics is, to a large extent, a logical consequence of the consistency of physical events.
@@ -197,7 +182,7 @@ From this group $G$, we canonically construct the real vector space $V = G \otim
 - ***Norms:** The order-unit norm $\|v\|_u = \inf \{ \lambda > 0 \mid -\lambda u \le v \le \lambda u \}$.*
 :::
 
-In many concrete cases (e.g. when $\mathbf{E}(M)$ arises from positive operators on a Hilbert space) this representation recovers the familiar functional-analytic structures of quantum theory. For our purposes, it suffices that $\mathcal{S}(M)$ supports the fragment $\mathsf{Math_{\mathrm{phys}}}$ of mathematics required for classical and quantum physics: real numbers, linear spaces, ordered structure, and probabilities.
+In many concrete cases (e.g. when $\mathbf{E}(M)$ arises from positive operators on a Hilbert space) this representation recovers the familiar functional-analytic structures of quantum theory. For our purposes, it suffices that $\mathcal{S}(M)$ supports the fragment $\ensuremath{\mathsf{Math}_{\mathrm{phys}}}$ of mathematics required for classical and quantum physics: real numbers, linear spaces, ordered structure, and probabilities.
 
 # Philosophical Synthesis
 
@@ -212,18 +197,18 @@ Here $\mathbf{E}(M)$ is the canonical effect algebra extracted from the qualitat
 We now make precise what it means, in this setting, to say that a system is "mathematical in its structure" rather than merely *describable* by mathematics.
 
 ::: definition_env
-**Definition 9** (Structural Mathematicality). *Let $M$ be a physical system described in the operational language $\mathcal{L}_{\min}$, and let $\mathbf{E}(M)$ be its canonical effect algebra. We say that $M$ is *structurally mathematical* (for $\mathsf{Math_{\mathrm{phys}}}$) if there exist:*
+**Definition 9** (Structural Mathematicality). *Let $M$ be a physical system described in the operational language $\mathcal{L}_{\min}$, and let $\mathbf{E}(M)$ be its canonical effect algebra. We say that $M$ is *structurally mathematical* (for $\ensuremath{\mathsf{Math}_{\mathrm{phys}}}$) if there exist:*
 
 - *an ordered real vector space with order unit $(V, V^+, u)$, and*
 
 - *an effect-algebra isomorphism $$\iota : \mathbf{E}(M) \;\xrightarrow{\ \cong\ }\; [0,u]_V := \{ v \in V \mid 0 \le v \le u \},$$*
 
-*such that $(V, V^+, u)$ supports the fragment $\mathsf{Math_{\mathrm{phys}}}$ of mathematics required for classical and quantum physics (ordered real numbers, linear structure, states, and probabilities).*
+*such that $(V, V^+, u)$ supports the fragment $\ensuremath{\mathsf{Math}_{\mathrm{phys}}}$ of mathematics required for classical and quantum physics (ordered real numbers, linear structure, states, and probabilities).*
 
 *The representation is called *canonical* if any two such triples $(V, V^+, u, \iota)$ and $(V', V'^+, u', \iota')$ are related by a unique order-unit isomorphism $T : V \to V'$ with $T(u) = u'$ and $T \circ \iota = \iota'$.*
 :::
 
-In other words, a system is structurally mathematical when its empirically accessible effect structure is not merely modeled by *some* piece of mathematics, but *forces*---up to order-unit isomorphism---a specific order-unit space realizing the $\mathsf{Math_{\mathrm{phys}}}$ fragment.
+In other words, a system is structurally mathematical when its empirically accessible effect structure is not merely modeled by *some* piece of mathematics, but *forces*---up to order-unit isomorphism---a specific order-unit space realizing the $\ensuremath{\mathsf{Math}_{\mathrm{phys}}}$ fragment.
 
 The results of the previous sections now immediately yield:
 
@@ -241,7 +226,7 @@ Passing to the real vector-space completion $V = G \otimes_{\mathbb{Z}} \mathbb{
 
 - All empirically accessible distinctions about $M$ that can be expressed in the operational language $\mathcal{L}_{\min}$ are encoded in $\mathbf{E}(M)$, and hence in the interval $[0,u]_{V(M)} \subseteq \mathcal{S}(M)$.
 
-- The mathematics of standard physical theories ($\mathsf{Math_{\mathrm{phys}}}$) is available *internally* to $\mathcal{S}(M)$, without being postulated at the outset: real numbers, linear combinations, ordered structure, and probabilistic states arise as the structural completion of qualitative empirical data.
+- The mathematics of standard physical theories ($\ensuremath{\mathsf{Math}_{\mathrm{phys}}}$) is available *internally* to $\mathcal{S}(M)$, without being postulated at the outset: real numbers, linear combinations, ordered structure, and probabilistic states arise as the structural completion of qualitative empirical data.
 
 On this view, mathematics is not an external imposition on the world but the rigid skeleton of coherent behavior. Different metaphysical interpretations of that skeleton are possible (nominalist, structural realist, Platonist), but the core structural claim is invariant: whenever a system satisfies the rich coherence constraints encoded in $T_{\mathrm{rich}}$, it thereby instantiates a canonical piece of mathematical structure of the sort used in classical and quantum physics.
 

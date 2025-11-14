@@ -72,66 +72,45 @@ echo "Building PDF..."
 xelatex -jobname=paper main.tex
 xelatex -jobname=paper main.tex  # Run twice for references
 
-# Build markdown version
+# Build HTML version with MathJax
+echo "Building HTML..."
+pandoc main.tex \
+  -o paper.html \
+  --from=latex \
+  --to=html5 \
+  --standalone \
+  --mathjax \
+  --metadata title="Coherence, Effect Logic, and the Structural Nature of Physical Systems" \
+  --metadata author="pseudosig"
+
+# Add version info to HTML
+TEMP_HTML="paper_versioned.html"
+{
+    sed -n '1,/<body>/p' paper.html
+    echo "<div style='text-align: center; margin: 2em 0;'>"
+    echo "<p><strong>First published:</strong> November 13, 2025</p>"
+    echo "<p><strong>Version:</strong> $NEW_VERSION ($(date '+%B %d, %Y'))</p>"
+    echo "<p><strong>Author:</strong> pseudosig</p>"
+    echo "</div>"
+    echo "<hr>"
+    sed -n '/<body>/,/<\/body>/p' paper.html | sed '1d;$d'
+    sed -n '/<\/body>/,$p' paper.html
+} > "$TEMP_HTML"
+mv "$TEMP_HTML" paper.html
+
+# Remove \ensuremath commands from HTML
+sed -i '' 's/\\ensuremath{\([^}]*\)}/\1/g' paper.html
+
+# Still build markdown for source viewing
 echo "Building Markdown..."
 pandoc main.tex \
   -o paper.md \
   --from=latex \
-  --to=gfm \
+  --to=markdown \
   --wrap=none
-  #--to=markdown+tex_math_dollars+raw_tex-fenced_divs \
-  #--wrap=none
 
-awk '
-  /^[[:space:]]*``` math[[:space:]]*$/ { print "$$"; in_math=1; next }
-  in_math && /^[[:space:]]*```.*$/ { print "$$"; in_math=0; next }
-  { print }
-' paper.md > paper_tmp.md && mv paper_tmp.md paper.md
-
-# Ensure blank lines around $$ blocks (but not between $$ and content)
-# This awk script adds blank lines before opening $$ and after closing $$
-awk '
-  /^\$\$$/ {
-    if (!in_math) {
-      # Opening $$
-      if (NR > 1 && prev_line != "") print ""
-      print
-      in_math = 1
-    } else {
-      # Closing $$
-      print
-      in_math = 0
-      needs_blank = 1
-    }
-    next
-  }
-  {
-    if (needs_blank && NF > 0) {
-      print ""
-      needs_blank = 0
-    }
-    print
-    prev_line = $0
-  }
-' paper.md > paper_tmp.md && mv paper_tmp.md paper.md
-
-# Remove \ensuremath commands that GitHub doesn't render
-# This removes \ensuremath{...} and leaves just the content
+# Remove \ensuremath commands that don't render properly
 sed -i '' 's/\\ensuremath{\([^}]*\)}/\1/g' paper.md
-
-# Insert version header into markdown
-TEMP_MD="paper_versioned.md"
-{
-    echo "---"
-    echo ""
-    echo "First published: November 13, 2025"
-    echo "Version: $NEW_VERSION (on $(date '+%B %d, %Y'))"
-    echo ""
-    echo "---"
-    echo "### Authored by pseudosig"
-    cat paper.md
-} > "$TEMP_MD"
-mv "$TEMP_MD" paper.md
 
 # Create releases directory if it doesn't exist
 mkdir -p "$RELEASES_DIR"
@@ -139,10 +118,12 @@ mkdir -p "$RELEASES_DIR"
 # Copy outputs to releases folder with version in filename
 echo "Copying files to releases folder..."
 cp paper.pdf "$RELEASES_DIR/paper-v$NEW_VERSION.pdf"
+cp paper.html "$RELEASES_DIR/paper-v$NEW_VERSION.html"
 cp paper.md "$RELEASES_DIR/paper-v$NEW_VERSION.md"
 
 # Also keep latest versions without version suffix
 cp paper.pdf "$RELEASES_DIR/paper-latest.pdf"
+cp paper.html "$RELEASES_DIR/paper-latest.html"
 cp paper.md "$RELEASES_DIR/paper-latest.md"
 
 # Clean up temporary files
@@ -152,6 +133,8 @@ echo "Build complete!"
 echo "Version: $NEW_VERSION"
 echo "Files created:"
 echo "  - $RELEASES_DIR/paper-v$NEW_VERSION.pdf"
+echo "  - $RELEASES_DIR/paper-v$NEW_VERSION.html"
 echo "  - $RELEASES_DIR/paper-v$NEW_VERSION.md"
 echo "  - $RELEASES_DIR/paper-latest.pdf"
+echo "  - $RELEASES_DIR/paper-latest.html"
 echo "  - $RELEASES_DIR/paper-latest.md"
